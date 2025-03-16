@@ -4,6 +4,7 @@ import { deleteBook, toggleFavorite } from '../../app/books/actionCreators'
 import {
   selectTitleFilter,
   selectAuthorFilter,
+  selectFavoriteFilter,
 } from '../../app/slices/FilterSlice'
 
 import './Booklist.css'
@@ -12,6 +13,7 @@ const BookList = () => {
   const books = useSelector((state) => state.books)
   const titleFilter = useSelector(selectTitleFilter)
   const authorFilter = useSelector(selectAuthorFilter)
+  const favoriteFilter = useSelector(selectFavoriteFilter)
   const dispatch = useDispatch()
 
   const handleDelete = (id) => {
@@ -29,7 +31,9 @@ const BookList = () => {
     const matchesAuthor = book.author
       .toLowerCase()
       .includes(authorFilter.toLowerCase())
-    return matchesTitle && matchesAuthor
+
+    const matchesFavorite = favoriteFilter ? book.isFavorite : true
+    return matchesTitle && matchesAuthor && matchesFavorite
   })
 
   return (
