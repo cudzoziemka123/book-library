@@ -55,7 +55,7 @@ const Filter = () => {
             <input
               type="checkbox"
               checked={favoriteFilter}
-              onClick={handleFavoriteFilter}
+              onChange={handleFavoriteFilter}
             />
             Only favorite
           </label>
