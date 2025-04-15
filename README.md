@@ -8,10 +8,6 @@
 
 A React-based web application to manage your personal library. Users can add books manually or via external API, filter the book list, and mark their favorite books.
 
-## 🌍 Live Demo
-
-[👉 View Live](https://book-library-proj.netlify.app/
-
 ## 🧑‍💻 Tech Stack
 
 - React
